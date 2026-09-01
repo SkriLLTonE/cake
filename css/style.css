@@ -364,6 +364,8 @@
 
 
 /* --- Секция Collection --- */
+
+
 .collection {
   background-color: #FBE6D3; 
   padding: 60px 0;
@@ -404,7 +406,7 @@
 
 .card__img img {
   width: 100%;
-  height: 400px;
+  height: 500px;
   object-fit: cover;
   display: block;
 }
