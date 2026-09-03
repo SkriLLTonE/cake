@@ -1,0 +1,84 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum AttributeType {
+  FILLING
+  FRUIT
+  DOUGH
+}
+
+model AdminUser {
+  id           String   @id @default(cuid())
+  email        String   @unique
+  passwordHash String
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+}
+
+model Category {
+  id            String    @id @default(cuid())
+  slug          String    @unique
+  nameRu        String
+  nameUz        String
+  descriptionRu String    @default("")
+  descriptionUz String    @default("")
+  sortOrder     Int       @default(0)
+  products      Product[]
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+}
+
+model Product {
+  id              String             @id @default(cuid())
+  categoryId      String
+  category        Category           @relation(fields: [categoryId], references: [id], onDelete: Cascade)
+  nameRu          String
+  nameUz          String
+  size            String             @default("BIG")
+  priceThousands  Int?
+  imageUrl        String
+  isPublished     Boolean            @default(false)
+  sortOrder       Int                @default(0)
+  attributes      ProductAttribute[]
+  createdAt       DateTime           @default(now())
+  updatedAt       DateTime           @updatedAt
+
+  @@index([categoryId, isPublished, priceThousands])
+}
+
+model AttributeOption {
+  id         String             @id @default(cuid())
+  type       AttributeType
+  nameRu     String
+  nameUz     String
+  sortOrder  Int                @default(0)
+  products   ProductAttribute[]
+  createdAt  DateTime           @default(now())
+  updatedAt  DateTime           @updatedAt
+
+  @@index([type])
+}
+
+model ProductAttribute {
+  productId  String
+  optionId   String
+  product    Product         @relation(fields: [productId], references: [id], onDelete: Cascade)
+  option     AttributeOption @relation(fields: [optionId], references: [id], onDelete: Cascade)
+
+  @@id([productId, optionId])
+}
+
+model BudgetBucket {
+  id            String  @id @default(cuid())
+  labelRu       String
+  labelUz       String
+  minThousands  Int
+  maxThousands  Int?
+  sortOrder     Int     @default(0)
+}

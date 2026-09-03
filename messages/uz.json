@@ -1,0 +1,57 @@
+{
+  "brand": "candy_cake_by_moxina",
+  "nav": {
+    "home": "Bosh sahifa",
+    "about": "Biz haqimizda",
+    "catalog": "Katalog",
+    "contacts": "Aloqa"
+  },
+  "home": {
+    "headline": "Shirin lahzalar san'ati",
+    "sub": "Har qanday bayram uchun mualliflik desertlar",
+    "ctaCatalog": "Katalogni ko'rish",
+    "ctaContact": "Bizga yozing"
+  },
+  "catalog": {
+    "title": "Katalog",
+    "filters": "Tanlash",
+    "budget": "Byudjet",
+    "filling": "Ichki qatlam",
+    "fruit": "Meva va rezavorlar",
+    "dough": "Xamir turi",
+    "all": "Hammasi",
+    "apply": "Ko'rsatish",
+    "reset": "Tozalash",
+    "empty": "Hech narsa topilmadi — filtrlarni o'zgartiring yoki bizga yozing",
+    "price": "{value} ming so'mdan",
+    "priceAsk": "Narx so'rov bo'yicha",
+    "size": "O'lcham"
+  },
+  "about": {
+    "title": "Biz haqimizda",
+    "body": "15 yildan ortiq vaqtdan beri asosiy tadbirlaringizni bezatadigan mualliflik shirinliklar yaratamiz. Menyuda — yevropa desertlari, chizkeyklar, bento tortlar va to'y asarlari. Faqat tabiiy mahsulotlar, har bir detallarga e'tibor."
+  },
+  "contacts": {
+    "title": "Aloqa",
+    "writeTg": "Telegramga yozish",
+    "writeIg": "Instagramni ochish",
+    "phone": "Telefon",
+    "address": "Manzil"
+  },
+  "admin": {
+    "login": "Admin kirish",
+    "email": "Email",
+    "password": "Parol",
+    "submit": "Kirish",
+    "logout": "Chiqish",
+    "products": "Mahsulotlar",
+    "categories": "Kategoriyalar",
+    "attributes": "Atributlar",
+    "budgets": "Byudjetlar",
+    "save": "Saqlash",
+    "create": "Yaratish",
+    "delete": "O'chirish",
+    "published": "Chop etilgan",
+    "price": "Narx (ming so'm)"
+  }
+}
